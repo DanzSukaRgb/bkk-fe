@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal";
 
 export default function NewsCard() {
     return (
-        <Reveal
-            as="article"
+        <article
             className="
         bg-white border border-gray-200
         rounded-2xl overflow-hidden
@@ -13,12 +11,12 @@ export default function NewsCard() {
         >
             <div className="h-40 bg-gray-100" />
 
-            <div className="p-5">
+            <div className="p-4 md:p-5">
                 <p className="text-xs text-gray-500 mb-2">
                     Kegiatan Sekolah • 12 Juni 2025
                 </p>
 
-                <h3 className="font-semibold text-base mb-2 leading-snug">
+                <h3 className="font-semibold text-base md:text-lg mb-2 leading-snug">
                     SMKN 6 Jember Gelar Literasi Digital
                 </h3>
 
@@ -29,11 +27,11 @@ export default function NewsCard() {
 
                 <Link
                     to="/berita/literasi-digital"
-                    className="text-sm text-primary font-medium"
+                    className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm text-primary font-medium"
                 >
                     Baca →
                 </Link>
             </div>
-        </Reveal>
+        </article>
     );
 }

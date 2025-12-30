@@ -32,7 +32,7 @@ export default function Sidebar({ open, onClose }) {
                     <span className="font-bold text-lg">
                         Menu
                     </span>
-                    <button onClick={onClose}>
+                    <button onClick={onClose} className="p-2 min-h-[44px] min-w-[44px]">
                         <X className="w-5 h-5" />
                     </button>
                 </div>
@@ -53,6 +53,7 @@ export default function Sidebar({ open, onClose }) {
                             className="
                 block
                 px-4 py-3
+                min-h-[44px]
                 rounded-xl
                 text-gray-700
                 hover:bg-gray-100
@@ -72,6 +73,7 @@ export default function Sidebar({ open, onClose }) {
             rounded-xl
             border border-gray-300
             text-sm
+            min-h-[44px]
           ">
                         Masuk
                     </button>
@@ -81,6 +83,7 @@ export default function Sidebar({ open, onClose }) {
             rounded-xl
             bg-primary text-white
             text-sm
+            min-h-[44px]
           ">
                         Daftar Perusahaan
                     </button>

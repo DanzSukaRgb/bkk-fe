@@ -7,8 +7,8 @@ import TraceClosing from "../components/trace-study/TraceClosing";
 
 export default function TraceStudyPage() {
     return (
-        <main className="bg-grid pt-36 pb-32">
-            <div className="max-w-7xl mx-auto px-6 space-y-28">
+        <main className="bg-grid pt-28 md:pt-36 pb-24 md:pb-32">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-16 md:space-y-28">
                 <TraceIntro />
                 <TraceBigNumbers />
                 <TraceJourney />

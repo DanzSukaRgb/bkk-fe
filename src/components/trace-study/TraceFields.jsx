@@ -1,13 +1,8 @@
-import Reveal from "../Reveal";
-
 export default function TraceFields() {
     return (
-        <Reveal
-            as="section"
-            className="mt-24 grid md:grid-cols-2 gap-10"
-        >
+        <section className="mt-16 md:mt-24 grid md:grid-cols-2 gap-8 md:gap-10">
             <div>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-lg md:text-xl font-semibold mb-3">
                     Bidang Pekerjaan Alumni
                 </h3>
                 <p className="text-gray-600">
@@ -21,7 +16,7 @@ export default function TraceFields() {
                 <Row name="Retail" value="58 Alumni" />
                 <Row name="Teknologi" value="32 Alumni" />
             </div>
-        </Reveal>
+        </section>
     );
 }
 

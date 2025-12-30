@@ -1,27 +1,25 @@
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal";
 
 export default function FeaturedNews() {
     return (
-        <Reveal
-            as="article"
+        <article
             className="
         bg-white border border-gray-200
         rounded-3xl overflow-hidden
-        mb-10
+        mb-8 md:mb-10
       "
         >
             <div className="grid md:grid-cols-2">
                 {/* IMAGE */}
-                <div className="h-64 md:h-full bg-gray-200" />
+                <div className="h-48 sm:h-56 md:h-full bg-gray-200" />
 
                 {/* CONTENT */}
-                <div className="p-8">
+                <div className="p-5 md:p-8">
                     <p className="text-xs text-gray-500 mb-2">
                         Prestasi • 20 Juni 2025
                     </p>
 
-                    <h2 className="text-2xl font-bold mb-4 leading-snug">
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
                         Siswa SMKN 6 Jember Raih Juara Nasional LKS
                     </h2>
 
@@ -33,12 +31,12 @@ export default function FeaturedNews() {
 
                     <Link
                         to="/berita/juara-nasional-lks"
-                        className="text-sm font-medium text-primary"
+                        className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm font-medium text-primary"
                     >
                         Baca Berita Utama →
                     </Link>
                 </div>
             </div>
-        </Reveal>
+        </article>
     );
 }

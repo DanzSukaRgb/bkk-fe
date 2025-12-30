@@ -1,15 +1,12 @@
-import Reveal from "../Reveal";
-
 export default function TraceOutcome() {
     return (
-        <Reveal
-            as="section"
+        <section
             className="
         bg-white border border-gray-200
-        rounded-3xl p-8
+        rounded-3xl p-6 md:p-8
       "
         >
-            <h2 className="font-semibold text-lg mb-4">
+            <h2 className="font-semibold text-base md:text-lg mb-4">
                 Status Lulusan
             </h2>
 
@@ -22,6 +19,6 @@ export default function TraceOutcome() {
                 Rata-rata waktu tunggu kerja:
                 <strong> 2,3 bulan</strong>
             </p>
-        </Reveal>
+        </section>
     );
 }

@@ -1,12 +1,8 @@
 import { MapPin, Globe, Users, CalendarDays } from "lucide-react";
-import Reveal from "../Reveal";
 
 export default function CompanyProfile() {
     return (
-        <Reveal
-            as="section"
-            className="bg-white border border-gray-200 rounded-2xl p-6"
-        >
+        <section className="bg-white border border-gray-200 rounded-2xl p-5 md:p-6">
             <h2 className="font-semibold mb-4">
                 Profil Perusahaan
             </h2>
@@ -23,7 +19,7 @@ export default function CompanyProfile() {
                 <Meta icon={<CalendarDays />} label="Berdiri" value="2008" />
                 <Meta icon={<Globe />} label="Website" value="www.contoh.co.id" />
             </div>
-        </Reveal>
+        </section>
     );
 }
 

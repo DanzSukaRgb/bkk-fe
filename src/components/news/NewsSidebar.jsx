@@ -1,8 +1,6 @@
-import Reveal from "../Reveal";
-
 export default function NewsSidebar() {
     return (
-        <Reveal as="aside" className="space-y-6 left">
+        <aside className="space-y-6">
             <Box title="Kategori">
                 <ul>
                     <li>• Kegiatan Sekolah</li>
@@ -19,7 +17,7 @@ export default function NewsSidebar() {
                     <li>• April 2025</li>
                 </ul>
             </Box>
-        </Reveal>
+        </aside>
     );
 }
 

@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal";
 
 export default function AnnouncementHighlight() {
     return (
-        <Reveal
-            as="section"
+        <section
             className="
         bg-white border border-gray-200
-        rounded-3xl p-8 mb-12
+        rounded-3xl p-6 md:p-8 mb-8 md:mb-12
         relative overflow-hidden
       "
         >
@@ -23,7 +21,7 @@ export default function AnnouncementHighlight() {
                 PENGUMUMAN PENTING
             </span>
 
-            <h2 className="text-2xl font-bold mb-3">
+            <h2 className="text-xl md:text-2xl font-bold mb-3">
                 Pengumuman Libur Hari Raya Idul Adha
             </h2>
 
@@ -34,10 +32,10 @@ export default function AnnouncementHighlight() {
 
             <Link
                 to="/pengumuman/libur-idul-adha"
-                className="text-sm font-medium text-primary"
+                className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm font-medium text-primary"
             >
                 Baca Pengumuman →
             </Link>
-        </Reveal>
+        </section>
     );
 }

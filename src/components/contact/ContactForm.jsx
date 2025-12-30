@@ -1,18 +1,14 @@
-import Reveal from "../Reveal";
-
 export default function ContactForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
     };
 
     return (
-        <Reveal
-            as="form"
+        <form
             className="
         bg-white border border-gray-200
-        rounded-3xl p-8
+        rounded-3xl p-6 md:p-8
         space-y-5
-        left
       "
             onSubmit={handleSubmit}
         >
@@ -34,7 +30,7 @@ export default function ContactForm() {
                     className="
             mt-1 w-full
             border border-gray-300
-            rounded-xl px-4 py-2
+            rounded-xl px-4 py-2 min-h-[120px]
             text-sm outline-none
           "
                 />
@@ -47,6 +43,7 @@ export default function ContactForm() {
           bg-primary text-white
           font-medium
           hover:opacity-90
+          min-h-[44px]
         "
             >
                 Kirim Pesan
@@ -55,7 +52,7 @@ export default function ContactForm() {
             <p className="text-xs text-gray-500 text-center">
                 Pesan akan diproses oleh pihak sekolah
             </p>
-        </Reveal>
+        </form>
     );
 }
 
@@ -70,7 +67,7 @@ function Input({ label, placeholder }) {
                 className="
           mt-1 w-full
           border border-gray-300
-          rounded-xl px-4 py-2
+          rounded-xl px-4 py-2 min-h-[44px]
           text-sm outline-none
         "
             />

@@ -7,12 +7,11 @@ import {
     GraduationCap,
     ShieldCheck,
 } from "lucide-react";
-import Reveal from "../Reveal";
 
 export default function Footer() {
     return (
-        <footer className="mt-24 bg-gray-50 border-t border-gray-200">
-            <Reveal as="div" className="max-w-7xl mx-auto px-6 py-16">
+        <footer className="mt-20 md:mt-24 bg-gray-50 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
                 {/* TOP */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
@@ -104,8 +103,8 @@ export default function Footer() {
                 </div>
 
                 {/* BOTTOM */}
-                <div className="border-t border-gray-200 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                    <p>
+                <div className="border-t border-gray-200 mt-10 md:mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-3 text-center md:text-left">
+                    <p className="leading-relaxed">
                         © {new Date().getFullYear()} BKK Sekolah. All rights reserved.
                     </p>
                     <p className="flex items-center gap-2">
@@ -113,7 +112,7 @@ export default function Footer() {
                         Dibina oleh Skanamber
                     </p>
                 </div>
-            </Reveal>
+            </div>
         </footer>
     );
 }

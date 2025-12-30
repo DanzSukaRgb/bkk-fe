@@ -1,11 +1,6 @@
-import Reveal from "../Reveal";
-
 export default function CompaniesToolbar() {
     return (
-        <Reveal
-            as="div"
-            className="flex justify-between items-center mb-6"
-        >
+        <div className="flex justify-between items-center mb-6">
             <p className="text-sm text-gray-600">
                 Menampilkan <strong>18</strong> perusahaan mitra
             </p>
@@ -17,6 +12,7 @@ export default function CompaniesToolbar() {
           rounded-xl
           px-4 py-2
           bg-white
+          min-h-[44px]
         "
             >
                 <option>Semua Industri</option>
@@ -25,6 +21,6 @@ export default function CompaniesToolbar() {
                 <option>Retail</option>
                 <option>Teknologi</option>
             </select>
-        </Reveal>
+        </div>
     );
 }

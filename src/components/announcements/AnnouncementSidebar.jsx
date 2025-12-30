@@ -1,8 +1,6 @@
-import Reveal from "../Reveal";
-
 export default function AnnouncementSidebar() {
     return (
-        <Reveal as="aside" className="space-y-6 left">
+        <aside className="space-y-6">
             <div className="bg-white border border-gray-200 rounded-2xl p-5">
                 <h3 className="font-semibold mb-3">
                     Kategori Pengumuman
@@ -25,6 +23,6 @@ export default function AnnouncementSidebar() {
                     <li>• Pengambilan Rapor</li>
                 </ul>
             </div>
-        </Reveal>
+        </aside>
     );
 }

@@ -1,15 +1,12 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import Reveal from "../Reveal";
 
 export default function ContactInfo() {
     return (
-        <Reveal
-            as="div"
+        <div
             className="
         bg-white border border-gray-200
-        rounded-3xl p-8
+        rounded-3xl p-6 md:p-8
         space-y-6
-        right
       "
         >
             <InfoItem
@@ -35,7 +32,7 @@ export default function ContactInfo() {
                 title="Jam Operasional"
                 value="Senin – Jumat, 07.00 – 15.00 WIB"
             />
-        </Reveal>
+        </div>
     );
 }
 

@@ -1,25 +1,24 @@
 import { Link } from "react-router-dom";
 import { CalendarDays, User, Folder } from "lucide-react";
-import Reveal from "../components/Reveal";
 
 export default function NewsDetailPage() {
     return (
-        <main className="bg-grid pt-36 pb-28">
-            <div className="max-w-5xl mx-auto px-6">
+        <main className="bg-grid pt-28 md:pt-36 pb-20 md:pb-28">
+            <div className="max-w-5xl mx-auto px-4 md:px-6">
 
                 {/* ================= BREADCRUMB ================= */}
-                <Reveal as="nav" className="text-sm text-gray-500 mb-6">
-                    <Link to="/" className="hover:text-primary">
+                <nav className="text-sm text-gray-500 mb-6">
+                    <Link to="/" className="inline-flex items-center min-h-[44px] md:min-h-0 hover:text-primary">
                         Beranda
                     </Link>
                     <span className="mx-2">/</span>
-                    <Link to="/berita" className="hover:text-primary">
+                    <Link to="/berita" className="inline-flex items-center min-h-[44px] md:min-h-0 hover:text-primary">
                         Berita Sekolah
                     </Link>
-                </Reveal>
+                </nav>
 
                 {/* ================= HEADER ================= */}
-                <Reveal as="header" className="mb-10">
+                <header className="mb-8 md:mb-10">
                     <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
                         <span className="flex items-center gap-1">
                             <Folder className="w-4 h-4" />
@@ -35,24 +34,20 @@ export default function NewsDetailPage() {
                         </span>
                     </div>
 
-                    <h1 className="text-3xl md:text-4xl font-bold leading-snug">
+                    <h1 className="text-2xl md:text-4xl font-bold leading-snug">
                         Siswa SMKN 6 Jember Raih Juara Nasional
                         Lomba Kompetensi Siswa (LKS)
                     </h1>
-                </Reveal>
+                </header>
 
                 {/* ================= FEATURE IMAGE ================= */}
-                <Reveal
-                    as="div"
-                    className="h-[420px] bg-gray-200 rounded-3xl mb-12 scale"
-                />
+                <div className="h-[240px] sm:h-[320px] md:h-[420px] bg-gray-200 rounded-3xl mb-8 md:mb-12" />
 
                 {/* ================= CONTENT ================= */}
-                <Reveal
-                    as="article"
+                <article
                     className="
             bg-white border border-gray-200
-            rounded-3xl p-8
+            rounded-3xl p-6 md:p-8
             text-gray-700
             leading-relaxed
             space-y-5
@@ -84,15 +79,14 @@ export default function NewsDetailPage() {
                         kualitas pembelajaran dan pembinaan siswa dalam
                         berbagai bidang akademik maupun non-akademik.
                     </p>
-                </Reveal>
+                </article>
 
                 {/* ================= AUTHOR / SCHOOL INFO ================= */}
-                <Reveal
-                    as="section"
+                <section
                     className="
-            mt-10
+            mt-8 md:mt-10
             bg-white border border-gray-200
-            rounded-2xl p-6
+            rounded-2xl p-5 md:p-6
             flex items-center gap-4
           "
                 >
@@ -105,15 +99,15 @@ export default function NewsDetailPage() {
                             Informasi resmi kegiatan dan prestasi sekolah
                         </p>
                     </div>
-                </Reveal>
+                </section>
 
                 {/* ================= RELATED NEWS ================= */}
-                <Reveal as="section" className="mt-14">
+                <section className="mt-10 md:mt-14">
                     <h2 className="font-semibold text-lg mb-6">
                         Berita Terkait
                     </h2>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {[1, 2, 3].map((i) => (
                             <Link
                                 key={i}
@@ -136,7 +130,7 @@ export default function NewsDetailPage() {
                             </Link>
                         ))}
                     </div>
-                </Reveal>
+                </section>
 
             </div>
         </main>

@@ -1,20 +1,18 @@
 import { MapPin, Briefcase, GraduationCap, Wallet, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal";
 
 export default function JobItem() {
     return (
-        <Reveal
-            as="div"
+        <div
             className="
         bg-white border border-gray-200
-        rounded-2xl p-6
+        rounded-2xl p-5 md:p-6
         hover:shadow-md transition
       "
         >
             <div className="flex justify-between gap-4">
                 <div>
-                    <h3 className="font-semibold text-lg">
+                    <h3 className="font-semibold text-base md:text-lg">
                         Operator Produksi
                     </h3>
                     <p className="text-sm text-gray-600">
@@ -33,7 +31,7 @@ export default function JobItem() {
             </div>
 
             {/* META */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5 text-sm text-gray-600">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-5 text-sm text-gray-600">
                 <Meta icon={<MapPin />} value="Jember" />
                 <Meta icon={<GraduationCap />} value="SMA / SMK" />
                 <Meta icon={<Wallet />} value="Rp4 – 5 jt" />
@@ -49,12 +47,12 @@ export default function JobItem() {
 
                 <Link
                     to="/lowongan/operator-produksi-pt-contoh"
-                    className="text-sm font-medium text-primary"
+                    className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm font-medium text-primary"
                 >
                     Lihat Detail →
                 </Link>
             </div>
-        </Reveal>
+        </div>
     );
 }
 

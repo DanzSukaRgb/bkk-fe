@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal";
 
 export default function CompanyJobs() {
     return (
-        <Reveal
-            as="section"
-            className="bg-white border border-gray-200 rounded-2xl p-6"
-        >
+        <section className="bg-white border border-gray-200 rounded-2xl p-5 md:p-6">
             <h2 className="font-semibold mb-4">
                 Lowongan di Perusahaan Ini
             </h2>
@@ -24,12 +20,12 @@ export default function CompanyJobs() {
 
                     <Link
                         to="/lowongan/operator-produksi-pt-contoh"
-                        className="text-sm text-primary font-medium"
+                        className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm text-primary font-medium"
                     >
                         Lihat →
                     </Link>
                 </div>
             </div>
-        </Reveal>
+        </section>
     );
 }

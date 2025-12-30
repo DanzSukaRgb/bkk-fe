@@ -1,15 +1,12 @@
-import Reveal from "../Reveal";
-
 export default function TraceNote() {
     return (
-        <Reveal
-            as="section"
+        <section
             className="
         bg-gray-50 border border-gray-200
-        rounded-3xl p-8
+        rounded-3xl p-6 md:p-8
       "
         >
-            <h2 className="font-semibold text-lg mb-3">
+            <h2 className="font-semibold text-base md:text-lg mb-3">
                 Catatan Sekolah
             </h2>
 
@@ -18,6 +15,6 @@ export default function TraceNote() {
                 internal sekolah, peningkatan kerja sama industri,
                 serta penyusunan program peningkatan kompetensi lulusan.
             </p>
-        </Reveal>
+        </section>
     );
 }

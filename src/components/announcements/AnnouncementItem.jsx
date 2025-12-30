@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom";
-import Reveal from "../Reveal";
 
 export default function AnnouncementItem() {
     return (
-        <Reveal
-            as="article"
+        <article
             className="
         relative
-        pl-8 py-6
+        pl-6 md:pl-8 py-5 md:py-6
         border-l border-gray-200
         group
       "
         >
             {/* DOT */}
             <span className="
-        absolute left-[-6px] top-8
+        absolute left-[-6px] top-6 md:top-8
         w-3 h-3
         rounded-full
         bg-primary
@@ -36,10 +34,10 @@ export default function AnnouncementItem() {
 
             <Link
                 to="/pengumuman/ujian-akhir-semester"
-                className="text-sm font-medium text-primary"
+                className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm font-medium text-primary"
             >
                 Detail →
             </Link>
-        </Reveal>
+        </article>
     );
 }

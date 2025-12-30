@@ -5,15 +5,15 @@ import ContactMap from "../components/contact/ContactMap";
 
 export default function ContactPage() {
     return (
-        <main className="bg-grid pb-28">
+        <main className="bg-grid pb-20 md:pb-28">
             <ContactHeader />
 
-            <section className="max-w-7xl mx-auto px-6 mt-10 grid lg:grid-cols-2 gap-10">
+            <section className="max-w-7xl mx-auto px-4 md:px-6 mt-8 md:mt-10 grid lg:grid-cols-2 gap-8 md:gap-10">
                 <ContactInfo />
                 <ContactForm />
             </section>
 
-            <section className="max-w-7xl mx-auto px-6 mt-14">
+            <section className="max-w-7xl mx-auto px-4 md:px-6 mt-10 md:mt-14">
                 <ContactMap />
             </section>
         </main>

@@ -1,15 +1,12 @@
-import Reveal from "../Reveal";
-
 export default function TraceDistribution() {
     return (
-        <Reveal
-            as="section"
+        <section
             className="
         bg-white border border-gray-200
-        rounded-3xl p-8
+        rounded-3xl p-6 md:p-8
       "
         >
-            <h2 className="font-semibold text-lg mb-6">
+            <h2 className="font-semibold text-base md:text-lg mb-6">
                 Sebaran Bidang Kerja Alumni
             </h2>
 
@@ -17,7 +14,7 @@ export default function TraceDistribution() {
             <List label="Perhotelan" value="64 Alumni" />
             <List label="Retail" value="58 Alumni" />
             <List label="Teknologi" value="32 Alumni" />
-        </Reveal>
+        </section>
     );
 }
 

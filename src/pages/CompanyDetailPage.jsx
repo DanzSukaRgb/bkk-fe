@@ -1,37 +1,36 @@
 import { Link } from "react-router-dom";
 import CompanyProfile from "../components/companies/CompanyProfile";
 import CompanyJobs from "../components/companies/CompanyJobs";
-import Reveal from "../components/Reveal";
 
 export default function CompanyDetailPage() {
     return (
-        <main className="bg-grid pt-36 pb-28">
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-4 gap-12">
+        <main className="bg-grid pt-28 md:pt-36 pb-20 md:pb-28">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-4 gap-8 md:gap-12">
 
                 {/* MAIN */}
-                <div className="lg:col-span-3 space-y-8">
-                    <Reveal as="section">
+                <div className="lg:col-span-3 space-y-6 md:space-y-8">
+                    <section>
                         <Link
                             to="/perusahaan"
-                            className="text-sm text-gray-500 hover:text-primary"
+                            className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm text-gray-500 hover:text-primary"
                         >
                             ← Kembali ke Perusahaan
                         </Link>
 
-                        <h1 className="text-3xl font-bold mt-4">
+                        <h1 className="text-2xl md:text-3xl font-bold mt-4">
                             PT Contoh Industri
                         </h1>
                         <p className="text-gray-600">
                             Manufaktur
                         </p>
-                    </Reveal>
+                    </section>
 
                     <CompanyProfile />
                     <CompanyJobs />
                 </div>
 
                 {/* SIDEBAR */}
-                <Reveal as="aside" className="lg:col-span-1 left">
+                <aside className="lg:col-span-1">
                     <div className="bg-white border border-gray-200 rounded-2xl p-5">
                         <p className="text-sm font-medium">
                             Status Kemitraan
@@ -40,7 +39,7 @@ export default function CompanyDetailPage() {
                             Aktif bekerja sama dengan BKK
                         </p>
                     </div>
-                </Reveal>
+                </aside>
             </div>
         </main>
     );

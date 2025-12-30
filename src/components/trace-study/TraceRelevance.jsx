@@ -4,7 +4,6 @@ import {
     Cell,
     ResponsiveContainer,
 } from "recharts";
-import Reveal from "../Reveal";
 
 const data = [
     { name: "Sesuai Kompetensi", value: 72 },
@@ -16,23 +15,22 @@ const COLORS = ["#2563eb", "#60a5fa", "#e5e7eb"]; // primary, soft, gray
 
 export default function TraceRelevance() {
     return (
-        <Reveal
-            as="section"
+        <section
             className="
-        mt-24
+        mt-16 md:mt-24
         bg-white
         border border-gray-200
         rounded-3xl
-        p-10
+        p-6 md:p-10
       "
         >
-            <h3 className="text-xl font-semibold mb-6">
+            <h3 className="text-lg md:text-xl font-semibold mb-6">
                 Kesesuaian Pekerjaan dengan Kompetensi
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
                 {/* CHART */}
-                <div className="h-[260px]">
+                <div className="h-[220px] sm:h-[260px]">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -73,6 +71,6 @@ export default function TraceRelevance() {
                     </p>
                 </div>
             </div>
-        </Reveal>
+        </section>
     );
 }

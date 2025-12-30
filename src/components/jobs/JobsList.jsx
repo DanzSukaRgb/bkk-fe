@@ -5,7 +5,7 @@ export default function JobsList() {
 
     if (!jobs.length) {
         return (
-            <div className="bg-white border border-gray-200 rounded-2xl p-10 text-center">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-10 text-center">
                 <p className="text-gray-600">
                     Tidak ada lowongan yang tersedia
                 </p>

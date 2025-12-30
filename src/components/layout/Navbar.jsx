@@ -77,7 +77,7 @@ export default function Navbar() {
                             {/* HAMBURGER (≤1200px) */}
                             <button
                                 onClick={() => setOpen(true)}
-                                className="xl:hidden p-2 rounded-lg hover:bg-gray-100"
+                                className="xl:hidden p-2 min-h-[44px] min-w-[44px] rounded-lg hover:bg-gray-100"
                                 aria-label="Open menu"
                             >
                                 <Menu className="w-5 h-5" />

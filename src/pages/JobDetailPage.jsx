@@ -8,28 +8,26 @@ import {
     CalendarDays,
     Building2,
     CheckCircle2,
-    FileText,
 } from "lucide-react";
-import Reveal from "../components/Reveal";
 
 export default function JobDetailPage() {
     return (
-        <main className="bg-grid pt-36 pb-28">
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-4 gap-12">
+        <main className="bg-grid pt-28 md:pt-36 pb-20 md:pb-28">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-4 gap-8 md:gap-12">
 
                 {/* ================= MAIN ================= */}
-                <div className="lg:col-span-3 space-y-10">
+                <div className="lg:col-span-3 space-y-8 md:space-y-10">
 
                     {/* HEADER */}
-                    <Reveal as="section">
+                    <section>
                         <Link
                             to="/lowongan"
-                            className="text-sm text-gray-500 hover:text-primary"
+                            className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm text-gray-500 hover:text-primary"
                         >
                             ← Kembali ke Lowongan
                         </Link>
 
-                        <h1 className="text-3xl font-bold mt-4">
+                        <h1 className="text-2xl md:text-3xl font-bold mt-4">
                             Operator Produksi
                         </h1>
 
@@ -39,7 +37,7 @@ export default function JobDetailPage() {
 
                         {/* META GRID */}
                         <div className="
-              grid grid-cols-2 md:grid-cols-3 gap-4
+              grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4
               mt-6
             ">
                             <Meta icon={<MapPin />} label="Lokasi" value="Jember" />
@@ -49,7 +47,7 @@ export default function JobDetailPage() {
                             <Meta icon={<CalendarDays />} label="Penutupan" value="30 Juni 2025" />
                             <Meta icon={<Clock />} label="Diposting" value="3 hari lalu" />
                         </div>
-                    </Reveal>
+                    </section>
 
                     {/* TENTANG PEKERJAAN */}
                     <Section title="Tentang Pekerjaan">
@@ -113,7 +111,7 @@ export default function JobDetailPage() {
                 </div>
 
                 {/* ================= SIDEBAR ================= */}
-                <Reveal as="aside" className="lg:col-span-1 space-y-5 left">
+                <aside className="lg:col-span-1 space-y-5">
 
                     {/* STATUS */}
                     <div className="bg-white border border-gray-200 rounded-2xl p-5">
@@ -126,7 +124,7 @@ export default function JobDetailPage() {
                     {/* APPLY */}
                     <div className="bg-white border border-gray-200 rounded-2xl p-5">
                         <button className="
-              w-full py-3 rounded-xl
+              w-full py-3 rounded-xl min-h-[44px] md:min-h-0
               bg-primary text-white font-semibold
             ">
                             Lamar Sekarang
@@ -155,13 +153,13 @@ export default function JobDetailPage() {
 
                         <Link
                             to="/perusahaan/pt-contoh-industri"
-                            className="text-sm text-primary font-medium"
+                            className="inline-flex items-center min-h-[44px] md:min-h-0 text-sm text-primary font-medium"
                         >
                             Lihat Profil Perusahaan →
                         </Link>
                     </div>
 
-                </Reveal>
+                </aside>
             </div>
         </main>
     );
@@ -185,10 +183,7 @@ function Meta({ icon, label, value }) {
 
 function Section({ title, children }) {
     return (
-        <Reveal
-            as="section"
-            className="bg-white border border-gray-200 rounded-2xl p-6"
-        >
+        <section className="bg-white border border-gray-200 rounded-2xl p-5 md:p-6">
             <h2 className="font-semibold mb-3">
                 {title}
             </h2>
@@ -196,6 +191,6 @@ function Section({ title, children }) {
             <div className="text-sm text-gray-700 leading-relaxed space-y-2">
                 {children}
             </div>
-        </Reveal>
+        </section>
     );
 }
