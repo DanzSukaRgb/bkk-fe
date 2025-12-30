@@ -1,0 +1,7 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+    /* lebih aman dari hidden */
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
