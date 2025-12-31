@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import logo from "../../assets/logo.png";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -23,10 +24,8 @@ export default function Navbar() {
                     >
                         {/* LOGO */}
                         <Link to="/" className="flex items-center gap-3">
-                            <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center font-bold text-primary">
-                                B
-                            </div>
-                            <span className="font-bold text-lg text-gray-900">
+                            <img src={logo} alt="Logo" className="w-9 h-9 object-contain" />
+                            <span className="font-bold text-sm text-gray-900">
                                 SMKN 6 JEMBER
                             </span>
                         </Link>
@@ -44,6 +43,14 @@ export default function Navbar() {
                                 <Link
                                     key={item.label}
                                     to={item.to}
+                                    onMouseEnter={() => {
+                                        if (item.to === '/') import('../../pages/HomePage');
+                                        if (item.to === '/lowongan') import('../../pages/JobsPage');
+                                        if (item.to === '/perusahaan') import('../../pages/CompaniesPage');
+                                        if (item.to === '/berita') import('../../pages/NewsPage');
+                                        if (item.to === '/pengumuman') import('../../pages/AnnouncementsPage');
+                                        if (item.to === '/kontak') import('../../pages/ContactPage');
+                                    }}
                                     className="
                     px-4 py-1.5 rounded-full
                     text-gray-600

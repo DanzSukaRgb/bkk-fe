@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
-/* ===== LAYOUT ===== */
 import PublicLayout from "./components/layout/PublicLayout";
 
-/* ===== PAGES ===== */
 const HomePage = lazy(() => import("./pages/HomePage"));
 const JobsPage = lazy(() => import("./pages/JobsPage"));
 const JobDetailPage = lazy(() => import("./pages/JobDetailPage"));
@@ -17,7 +15,6 @@ const AnnouncementDetailPage = lazy(() => import("./pages/AnnouncementDetailPage
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const TraceStudyPage = lazy(() => import("./pages/TraceStudyPage"));
 
-/* ===== AUTH ===== */
 const LoginPage = lazy(() => import("./pages/auth/LoginPage"));
 const CompanyRegisterPage = lazy(() =>
     import("./pages/auth/CompanyRegisterPage")
@@ -28,14 +25,12 @@ export default function App() {
         <BrowserRouter>
             <Suspense fallback={null}>
                 <Routes>
-                    {/* ===== AUTH (NO NAVBAR / FOOTER) ===== */}
                     <Route path="/login" element={<LoginPage />} />
                     <Route
                         path="/register-perusahaan"
                         element={<CompanyRegisterPage />}
                     />
 
-                    {/* ===== PUBLIC (WITH NAVBAR / FOOTER) ===== */}
                     <Route element={<PublicLayout />}>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/trace-study" element={<TraceStudyPage />} />
