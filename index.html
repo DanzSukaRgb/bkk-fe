@@ -2,6 +2,14 @@
 <html lang="id">
 
 <head>
+    <script>
+        // SCRIPT TO PREVENT BROWSER EXTENSION ERRORS
+        // The "Ember Inspector" extension causes a crash by trying to access '$.Activity'.
+        // We define window.$ as a placeholder to prevent this "undefined" error.
+        if (typeof window.$ === 'undefined') {
+            window.$ = { Activity: undefined };
+        }
+    </script>
     <meta charset="UTF-8" />
 
     <!-- PLUS JAKARTA SANS -->
@@ -13,14 +21,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BKK || SMKN 6 JEMBER</title>
 </head>
-<script>
-    // SCRIPT TO PREVENT BROWSER EXTENSION ERRORS
-    // The "Ember Inspector" extension causes a crash by trying to access '$.Activity'.
-    // We define window.$ as a placeholder to prevent this "undefined" error.
-    if (typeof window.$ === 'undefined') {
-        window.$ = { Activity: undefined };
-    }
-</script>
 
 <body>
     <div id="root"></div>

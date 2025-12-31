@@ -85,19 +85,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000, // Naikkan limit warning
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            // Pisahkan React core agar di-cache browser secara terpisah
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'react-vendor';
-            }
-            // Pisahkan library UI atau icons jika besar
-            if (id.includes('lucide') || id.includes('recharts')) {
-              return 'ui-vendor';
-            }
-            return 'vendor'; // Sisa dependency lainnya
-          }
-        },
+        // manualChunks removed to prevent build issues with React 19 exports
       },
     },
   },
