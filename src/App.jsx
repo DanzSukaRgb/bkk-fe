@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+/* ===== LAYOUT ===== */
+import PublicLayout from "./components/layout/PublicLayout";
 
-/* ================= LAZY PAGES ================= */
-
+/* ===== PAGES ===== */
 const HomePage = lazy(() => import("./pages/HomePage"));
 const JobsPage = lazy(() => import("./pages/JobsPage"));
 const JobDetailPage = lazy(() => import("./pages/JobDetailPage"));
@@ -18,35 +17,48 @@ const AnnouncementDetailPage = lazy(() => import("./pages/AnnouncementDetailPage
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const TraceStudyPage = lazy(() => import("./pages/TraceStudyPage"));
 
-/* ================= APP ================= */
+/* ===== AUTH ===== */
+const LoginPage = lazy(() => import("./pages/auth/LoginPage"));
+const CompanyRegisterPage = lazy(() =>
+    import("./pages/auth/CompanyRegisterPage")
+);
+
 export default function App() {
     return (
         <BrowserRouter>
-            <Navbar />
-
-            {/* 🔥 LAZY WRAPPER */}
             <Suspense fallback={null}>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/trace-study" element={<TraceStudyPage />} />
+                    {/* ===== AUTH (NO NAVBAR / FOOTER) ===== */}
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route
+                        path="/register-perusahaan"
+                        element={<CompanyRegisterPage />}
+                    />
 
-                    <Route path="/lowongan" element={<JobsPage />} />
-                    <Route path="/lowongan/:slug" element={<JobDetailPage />} />
+                    {/* ===== PUBLIC (WITH NAVBAR / FOOTER) ===== */}
+                    <Route element={<PublicLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/trace-study" element={<TraceStudyPage />} />
 
-                    <Route path="/perusahaan" element={<CompaniesPage />} />
-                    <Route path="/perusahaan/:slug" element={<CompanyDetailPage />} />
+                        <Route path="/lowongan" element={<JobsPage />} />
+                        <Route path="/lowongan/:slug" element={<JobDetailPage />} />
 
-                    <Route path="/berita" element={<NewsPage />} />
-                    <Route path="/berita/:slug" element={<NewsDetailPage />} />
+                        <Route path="/perusahaan" element={<CompaniesPage />} />
+                        <Route path="/perusahaan/:slug" element={<CompanyDetailPage />} />
 
-                    <Route path="/pengumuman" element={<AnnouncementsPage />} />
-                    <Route path="/pengumuman/:slug" element={<AnnouncementDetailPage />} />
+                        <Route path="/berita" element={<NewsPage />} />
+                        <Route path="/berita/:slug" element={<NewsDetailPage />} />
 
-                    <Route path="/kontak" element={<ContactPage />} />
+                        <Route path="/pengumuman" element={<AnnouncementsPage />} />
+                        <Route
+                            path="/pengumuman/:slug"
+                            element={<AnnouncementDetailPage />}
+                        />
+
+                        <Route path="/kontak" element={<ContactPage />} />
+                    </Route>
                 </Routes>
             </Suspense>
-
-            <Footer />
         </BrowserRouter>
     );
 }

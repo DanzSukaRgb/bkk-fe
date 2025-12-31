@@ -58,26 +58,45 @@ export default function Navbar() {
 
                         {/* ACTION */}
                         <div className="flex items-center gap-3">
-                            <button className="hidden xl:block text-sm text-gray-600 hover:text-primary">
+                            {/* LOGIN */}
+                            <Link
+                                to="/login"
+                                className="
+                  hidden xl:block
+                  text-sm
+                  text-gray-600
+                  hover:text-primary
+                  transition
+                "
+                            >
                                 Masuk
-                            </button>
+                            </Link>
 
-                            <button
+                            {/* REGISTER PERUSAHAAN */}
+                            <Link
+                                to="/register-perusahaan"
                                 className="
                   hidden xl:block
                   text-sm px-4 py-2
                   rounded-xl
                   bg-primary text-white
                   hover:opacity-90
+                  transition
                 "
                             >
                                 Daftar Perusahaan
-                            </button>
+                            </Link>
 
                             {/* HAMBURGER (≤1200px) */}
                             <button
                                 onClick={() => setOpen(true)}
-                                className="xl:hidden p-2 min-h-[44px] min-w-[44px] rounded-lg hover:bg-gray-100"
+                                className="
+                  xl:hidden
+                  p-2
+                  min-h-[44px] min-w-[44px]
+                  rounded-lg
+                  hover:bg-gray-100
+                "
                                 aria-label="Open menu"
                             >
                                 <Menu className="w-5 h-5" />
