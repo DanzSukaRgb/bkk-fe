@@ -12,7 +12,7 @@ export default function ProgramSection() {
                         {/* MAIN IMAGE */}
                         <div className="relative rounded-3xl overflow-hidden shadow-xl">
                             <img
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&q=80&fm=webp&fit=crop"
                                 alt="Program Karier BKK"
                                 width="800"
                                 height="600"

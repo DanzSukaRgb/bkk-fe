@@ -127,6 +127,10 @@ export default defineConfig({
     target: 'esnext',
     sourcemap: false,
     minify: 'terser',
+    modulePreload: {
+      polyfill: true
+    },
+    cssCodeSplit: true,
     terserOptions: {
       compress: {
         drop_console: true,
@@ -136,11 +140,26 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'icons': ['lucide-react'],
-          'charts': ['recharts']
-        }
+        manualChunks(id) {
+          // Vendor chunks
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            if (id.includes('recharts')) {
+              return 'charts';
+            }
+            // Other node_modules go to vendor chunk
+            return 'vendor';
+          }
+        },
+        // Optimize chunk file names
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       },
     },
   },

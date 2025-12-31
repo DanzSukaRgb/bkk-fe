@@ -60,7 +60,7 @@ export default function AdvantageSection() {
                 {/* RIGHT – IMAGE */}
                 <div className="relative overflow-hidden md:overflow-visible">
                     <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&q=80&fm=webp&fit=crop"
                         alt="BKK Activity"
                         width="800"
                         height="600"
