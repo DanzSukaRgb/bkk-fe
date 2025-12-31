@@ -142,19 +142,6 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           // Vendor chunks
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'react-vendor';
-            }
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            if (id.includes('recharts')) {
-              return 'charts';
-            }
-            // Other node_modules go to vendor chunk
-            return 'vendor';
-          }
         },
         // Optimize chunk file names
         chunkFileNames: 'assets/[name]-[hash].js',
