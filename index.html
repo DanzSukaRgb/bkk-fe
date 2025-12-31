@@ -13,18 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BKK || SMKN 6 JEMBER</title>
 </head>
-<script>
-    // Suppress specific errors caused by browser extensions (e.g., Ember Inspector)
-    // trying to access jQuery ($) which is not present in this application.
-    window.addEventListener('error', function (e) {
-        if (e.message && (e.message.includes('$ is undefined') || e.message.includes('Ember'))) {
-            // Prevent the error from showing in the console
-            e.stopImmediatePropagation();
-            e.preventDefault();
-            return true;
-        }
-    });
-</script>
 
 <body>
     <div id="root"></div>
