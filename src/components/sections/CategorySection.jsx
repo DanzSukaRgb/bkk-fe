@@ -22,7 +22,7 @@ const categories = [
 
 export default function CategorySection() {
     return (
-        <section className="py-16 sm:py-20 bg-grid">
+        <section className="py-16 sm:py-20 bg-grid cv-auto">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <h2 className="text-xl sm:text-2xl font-bold mb-8 sm:mb-10 text-center">
                     Kategori Pekerjaan

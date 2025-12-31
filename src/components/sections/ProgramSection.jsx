@@ -1,6 +1,6 @@
 export default function ProgramSection() {
     return (
-        <section className="py-20 md:py-32 bg-gray-50 bg-grid">
+        <section className="py-20 md:py-32 bg-gray-50 bg-grid cv-auto">
             <div className="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 
                 {/* LEFT — IMAGE WITH ELEMENT */}
@@ -13,11 +13,18 @@ export default function ProgramSection() {
                         <div className="relative rounded-3xl overflow-hidden shadow-xl">
                             <img
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&q=80&fm=webp&fit=crop"
+                                srcSet="
+                                    https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=480&h=360&q=80&fm=webp&fit=crop 480w,
+                                    https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&q=80&fm=webp&fit=crop 800w,
+                                    https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=900&q=80&fm=webp&fit=crop 1200w
+                                "
+                                sizes="(min-width: 1024px) 560px, (min-width: 768px) 50vw, 92vw"
                                 alt="Program Karier BKK"
                                 width="800"
                                 height="600"
                                 loading="lazy"
                                 decoding="async"
+                                fetchpriority="low"
                                 className="w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover"
                             />
 

@@ -25,7 +25,7 @@ export default function FaqSection() {
     const [open, setOpen] = useState(null);
 
     return (
-        <section className="bg-grid py-20 sm:py-28">
+        <section className="bg-grid py-20 sm:py-28 cv-auto">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
                 {/* HEADER */}

@@ -8,7 +8,7 @@ import {
 
 export default function AdvantageSection() {
     return (
-        <section className="py-20 sm:py-28 bg-grid">
+        <section className="py-20 sm:py-28 bg-grid cv-auto">
             <div className="
                 max-w-7xl mx-auto
                 px-4 sm:px-6
@@ -61,11 +61,18 @@ export default function AdvantageSection() {
                 <div className="relative overflow-hidden md:overflow-visible">
                     <img
                         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&q=80&fm=webp&fit=crop"
+                        srcSet="
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=480&h=360&q=80&fm=webp&fit=crop 480w,
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&q=80&fm=webp&fit=crop 800w,
+                            https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=900&q=80&fm=webp&fit=crop 1200w
+                        "
+                        sizes="(min-width: 1024px) 560px, (min-width: 768px) 50vw, 92vw"
                         alt="BKK Activity"
                         width="800"
                         height="600"
                         loading="lazy"
                         decoding="async"
+                        fetchpriority="low"
                         className="
                             w-full
                             rounded-2xl sm:rounded-3xl

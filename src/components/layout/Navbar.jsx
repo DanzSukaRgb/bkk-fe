@@ -24,7 +24,14 @@ export default function Navbar() {
                     >
                         {/* LOGO */}
                         <Link to="/" className="flex items-center gap-3">
-                            <img src={logo} alt="Logo" className="w-9 h-9 object-contain" />
+                            <img
+                                src={logo}
+                                alt="Logo"
+                                width="36"
+                                height="36"
+                                decoding="async"
+                                className="w-9 h-9 object-contain"
+                            />
                             <span className="font-bold text-sm text-gray-900">
                                 SMKN 6 JEMBER
                             </span>
