@@ -14,6 +14,10 @@ export default function ProgramSection() {
                             <img
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
                                 alt="Program Karier BKK"
+                                width="800"
+                                height="600"
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-[280px] sm:h-[360px] md:h-[420px] object-cover"
                             />
 

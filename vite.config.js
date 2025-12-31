@@ -4,10 +4,33 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import viteCompression from 'vite-plugin-compression';
 import { VitePWA } from 'vite-plugin-pwa';
 
+// Plugin to add security headers
+function securityHeaders() {
+  return {
+    name: 'security-headers',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        // Content Security Policy
+        res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;");
+        // X-Frame-Options
+        res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+        // X-Content-Type-Options
+        res.setHeader('X-Content-Type-Options', 'nosniff');
+        // Referrer-Policy
+        res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+        // Permissions-Policy
+        res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+        next();
+      });
+    }
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    securityHeaders(),
     ViteImageOptimizer({
       png: {
         quality: 80,
@@ -22,7 +45,14 @@ export default defineConfig({
         lossless: true,
       },
     }),
-    viteCompression(),
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+    }),
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
@@ -74,22 +104,47 @@ export default defineConfig({
                 statuses: [0, 200]
               },
             }
+          },
+          {
+            urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'unsplash-images-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
           }
         ]
       }
     }),
   ],
   build: {
-    target: 'esnext', // Optimasi untuk browser modern
-    sourcemap: false, // Tidak perlu sourcemap di production
-    chunkSizeWarningLimit: 1000, // Naikkan limit warning
+    target: 'esnext',
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
+      }
+    },
     rollupOptions: {
       output: {
-        // manualChunks removed to prevent build issues with React 19 exports
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'icons': ['lucide-react'],
+          'charts': ['recharts']
+        }
       },
     },
   },
   esbuild: {
-    drop: ['console', 'debugger'], // Hapus semua console.log di production untuk performa & kebersihan
+    drop: ['console', 'debugger'],
   },
 })

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bkk-smkn6jember.sch.id/sitemap.xml

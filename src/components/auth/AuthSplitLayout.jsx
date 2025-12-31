@@ -67,6 +67,8 @@ export default function AuthSplitLayout({ title, subtitle, children }) {
                 <img
                     src={slides[active].image}
                     alt={slides[active].title}
+                    width="1920"
+                    height="1080"
                     loading="eager"
                     decoding="async"
                     className="
@@ -95,8 +97,8 @@ export default function AuthSplitLayout({ title, subtitle, children }) {
                                 <span
                                     key={i}
                                     className={`h-2 w-2 rounded-full ${i === active
-                                            ? "bg-primary"
-                                            : "bg-primary/30"
+                                        ? "bg-primary"
+                                        : "bg-primary/30"
                                         }`}
                                 />
                             ))}

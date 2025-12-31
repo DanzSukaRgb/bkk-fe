@@ -30,7 +30,7 @@ export default function Sidebar({ open, onClose }) {
         {/* HEADER */}
         <div className="flex items-center justify-between mb-8">
           <span className="font-bold text-lg">Menu</span>
-          <button onClick={onClose} className="p-2 min-h-[44px] min-w-[44px]">
+          <button onClick={onClose} className="p-2 min-h-[44px] min-w-[44px]" aria-label="Close menu">
             <X className="w-5 h-5" />
           </button>
         </div>
